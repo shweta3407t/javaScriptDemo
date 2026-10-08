@@ -1,0 +1,40 @@
+ 
+ h1{
+    background-color: yellow;
+ }
+
+ /* div{
+    height: 100px;
+    width: 100px;
+ } */
+/* 
+ button{
+    background-color: red;
+     padding: 10px;
+ } */
+
+body{
+    background-color: pink;
+}
+
+
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: deeppink;
+    margin: 10px;
+    border: 2px solid white;
+    text-align: center;
+ }
+
+
+ .myClass{
+    color: white;
+ }
+
+
+
+ .myNewClass{
+    background-color: green;
+ }
+  
