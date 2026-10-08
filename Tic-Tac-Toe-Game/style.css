@@ -49,8 +49,7 @@ body{
 
 
  h1{
-    margin: 30px;
-    font-size: 50px;
+     font-size: 50px;
   }
 
 #reset{
@@ -74,6 +73,11 @@ body{
 
 .message-container{
   height: 900px;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 
 }
 
@@ -82,6 +86,7 @@ body{
 
 .hide{
     display: none;
+     
 }
 
 #message{
