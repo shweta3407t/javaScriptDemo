@@ -43,10 +43,61 @@ let h=document.querySelector("h2");
 
 
 
-let p= document.querySelector("p");
+// let p= document.querySelector("p");
 
  
-p.classList.add("myNewClass");
+// p.classList.add("myNewClass");
+
+
+
+
+let student = {
+    fullname : "shweta",
+    roll : 23 ,
+    studey  (){
+        console.log(this.fullname + "studing");
+    }
+}
+
+
+let employee = {
+    calTax(){
+        console.log("tax is 10%");
+    }
+}
+
+const shweta ={
+  salary : 3000 
+
+}
+
+shweta.__proto__ = employee ;
+
+
+class car{
+    brand;
+
+    constructor(brand){
+        this.brand=brand;
+    }
+ 
+     
+
+    stop (){
+        console.log( this.brand + " car breaking");
+    }
+}
+
+class farari extends car{
+    brand="shweta";
+
+}
+
+let farariCar=new farari( );
+
+
+
+
 
 
 
