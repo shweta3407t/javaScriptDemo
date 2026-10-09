@@ -1,11 +1,9 @@
 console.log("shweta");
 
-let heading=document.querySelector("h1");
+let heading = document.querySelector("h1");
 
-
-let h=document.querySelector("h2");
- h.innerText=h.innerText + " from shweta student";
-
+let h = document.querySelector("h2");
+h.innerText = h.innerText + " from shweta student";
 
 //  let divs=document.querySelectorAll(".box");
 
@@ -13,12 +11,6 @@ let h=document.querySelector("h2");
 //  divs[1].innerText="tikki";
 //  divs[2].innerText="ankita";
 
-
-
-
-
- 
- 
 //  let div=document.querySelector("div");
 //  div.innerText="shweta";
 
@@ -28,11 +20,6 @@ let h=document.querySelector("h2");
 
 //   div.after(btn);
 
-
-
-
-
-
 // let btn=document.createElement("button");
 // btn.innerText=("click me");
 //  btn.style.backgroundColor="purple";
@@ -40,16 +27,9 @@ let h=document.querySelector("h2");
 
 // document.body.prepend(btn);
 
-
-
-
 // let p= document.querySelector("p");
 
- 
 // p.classList.add("myNewClass");
-
-
-
 
 // let student = {
 //     fullname : "shweta",
@@ -59,7 +39,6 @@ let h=document.querySelector("h2");
 //     }
 // }
 
-
 // let employee = {
 //     calTax(){
 //         console.log("tax is 10%");
@@ -67,12 +46,11 @@ let h=document.querySelector("h2");
 // }
 
 // const shweta ={
-//   salary : 3000 
+//   salary : 3000
 
 // }
 
 // shweta.__proto__ = employee ;
-
 
 // class car{
 //     brand = car;
@@ -81,8 +59,6 @@ let h=document.querySelector("h2");
 //        console.log("enter parant constructor");
 //         this.brand=brand;
 //     }
- 
-     
 
 //     stop (){
 //         console.log( this.brand + " car breaking");
@@ -95,7 +71,6 @@ let h=document.querySelector("h2");
 //         super();
 //         console.log("neter child constructor");
 //     }
-
 
 // }
 
@@ -110,8 +85,6 @@ let h=document.querySelector("h2");
 //      viewData=(   )=>{
 //         console.log("user name : " + this.name + ", user email : " + this.email);
 //     }
-
-
 
 // }
 
@@ -132,7 +105,7 @@ let h=document.querySelector("h2");
 
 // let teacher=new Admin("ankita" , "tikki@gmail.com");
 
-
+//sync and async
 
 // console.log("1");
 // console.log("2");
@@ -140,15 +113,12 @@ let h=document.querySelector("h2");
 // console.log("4");
 // console.log("5");
 
- 
-
 // setTimeout( ()=>{
 //     console.log("shweta i timeout ");
 // } , 2000);
 
 // console.log("6");
 // console.log("7");
-
 
 // calculator =( a , b ,sumCallBack )=>{
 
@@ -160,31 +130,67 @@ let h=document.querySelector("h2");
 //     console.log(a+b);
 // });
 
+// //callback
 
-function getData (data , getNextData) {
-    setTimeout(()=>{
-         console.log("data of " +  data); 
-         if(getNextData) {
-            getNextData()
-         }
-         } , 1000);
-    
-}
+// function getData (data , getNextData) {
+//     setTimeout(()=>{
+//          console.log("data of " +  data);
+//          if(getNextData) {
+//             getNextData()
+//          }
+//          } , 1000);
 
-getData(1 , ()=> {
-    getData(2 , ()=>{
-        getData(3 , ()=>{
-            getData(4);
-        })
-    })
-})
+// }
 
+// getData(1 , ()=> {
+//     getData(2 , ()=>{
+//         getData(3 , ()=>{
+//             getData(4);
+//         })
+//     })
+// })
 
+// let promise=new Promise((resolve , reject)=>{
+//     console.log("i am promiss");
+//     // resolve("order complete");
+//     reject("some error occured");
+// })
 
+// function getData (data , getNextData) {
+//     return new Promise((resolve , reject)=>{
+//          setTimeout(()=>{
+//          console.log("data of " +  data);
+//         //  resolve("sucess");
+//          if(getNextData) {
+//             getNextData()
+//          }
+//          } , 1000);
+//     })
 
+// }
 
+// getData(1 , ()=> {
+//     getData(2 , ()=>{
+//         getData(3 , ()=>{
+//             getData(4);
+//         })
+//     })
+// })
 
+let getPromiss = () => {
+  return new Promise((resolve, reject) => {
+    console.log("i am promissing");
+    resolve("sucess");
+    // reject("error");
+  });
+};
 
+let promise = getPromiss();
 
+promise.then((result ) => {
+  console.log(result + " promisss full filed");
+});
 
-
+promise.catch((error) => {
+  console.log(error + " promiss rejected");
+});
