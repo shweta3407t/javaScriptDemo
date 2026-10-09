@@ -266,7 +266,7 @@ async function  getAllData( ) {
     
 }
 
-
+ 
 //IIFE this we do not need to call it willl automatically get called-----drawBackcannot reuse it
 
 (async function  () {
