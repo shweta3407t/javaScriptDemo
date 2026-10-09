@@ -134,31 +134,51 @@ let h=document.querySelector("h2");
 
 
 
-console.log("1");
-console.log("2");
-console.log("3");
-console.log("4");
-console.log("5");
+// console.log("1");
+// console.log("2");
+// console.log("3");
+// console.log("4");
+// console.log("5");
 
  
 
-setTimeout( ()=>{
-    console.log("shweta i timeout ");
-} , 2000);
+// setTimeout( ()=>{
+//     console.log("shweta i timeout ");
+// } , 2000);
 
-console.log("6");
-console.log("7");
+// console.log("6");
+// console.log("7");
 
 
-calculator =( a , b ,sumCallBack )=>{
+// calculator =( a , b ,sumCallBack )=>{
 
-    sumCallBack(a, b);
+//     sumCallBack(a, b);
 
+// }
+
+// calculator(10 , 20 , ( a , b )=>{
+//     console.log(a+b);
+// });
+
+
+function getData (data , getNextData) {
+    setTimeout(()=>{
+         console.log("data of " +  data); 
+         if(getNextData) {
+            getNextData()
+         }
+         } , 1000);
+    
 }
 
-calculator(10 , 20 , ( a , b )=>{
-    console.log(a+b);
-});
+getData(1 , ()=> {
+    getData(2 , ()=>{
+        getData(3 , ()=>{
+            getData(4);
+        })
+    })
+})
+
 
 
 
