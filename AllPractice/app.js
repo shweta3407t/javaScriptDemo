@@ -169,6 +169,7 @@ h.innerText = h.innerText + " from shweta student";
 //   });
 // }
 
+
 // getData(1, () => {
 //   getData(2, () => {
 //     getData(3, () => {
@@ -195,32 +196,93 @@ h.innerText = h.innerText + " from shweta student";
 //   console.log(error + " promiss rejected");
 // });
 
-asyncFunc = () => {
+// asyncFunc = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("data 1");
+//       resolve("success");
+//     }, 3000);
+//   });
+// };
+
+// asyncFunc2 = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("data 2");
+//       resolve("success");
+//     }, 3000);
+//   });
+// };
+
+// ////
+// console.log("getting data 1.....");
+// asyncFunc().then((result) => {
+//   console.log(result);
+
+//   console.log("getting data 2...");
+//   asyncFunc2().then((result) => {
+//     console.log(result);
+//   });
+// });
+
+////async -await
+
+function api() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log("data 1");
-      resolve("success");
-    }, 3000);
+      console.log("weather data");
+      resolve(200);
+    }, 4000);
   });
-};
+}
 
-asyncFunc2 = () => {
+async function getWeatherData() {
+  await api();
+  await api();
+  await api();
+  await api();
+  await api();
+}
+
+
+
+
+
+function getData(data) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log("data 2");
-      resolve("success");
-    }, 3000);
+      console.log("data of " + data);
+       resolve("sucess");
+      
+    }, 1000);
   });
-};
+}
 
-console.log("getting data 1.....");
-let p1 = asyncFunc();
-p1.then((result) => {
-  console.log(result);
+async function  getAllData( ) {
+    await getData(1);
+    await getData(2);
+    await getData(3);
+    await getData(4);
+    
+}
 
-  console.log("getting data 2...");
-  let p2 = asyncFunc2();
-  p2.then((result) => {
-    console.log(result);
-  });
-});
+
+//IIFE this we do not need to call it willl automatically get called-----drawBackcannot reuse it
+
+(async function  () {
+  await api();
+  await api();
+  await api();
+  await api();
+  await api();
+})();
+
+
+
+(async function ( ) {
+    await getData(1);
+    await getData(2);
+    await getData(3);
+    await getData(4);
+    
+})();
