@@ -169,7 +169,6 @@ h.innerText = h.innerText + " from shweta student";
 //   });
 // }
 
-
 // getData(1, () => {
 //   getData(2, () => {
 //     getData(3, () => {
@@ -225,64 +224,68 @@ h.innerText = h.innerText + " from shweta student";
 //   });
 // });
 
-////async -await
+// ////async -await
 
-function api() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("weather data");
-      resolve(200);
-    }, 4000);
-  });
-}
+// function api() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("weather data");
+//       resolve(200);
+//     }, 4000);
+//   });
+// }
 
-async function getWeatherData() {
-  await api();
-  await api();
-  await api();
-  await api();
-  await api();
-}
+// async function getWeatherData() {
+//   await api();
+//   await api();
+//   await api();
+//   await api();
+//   await api();
+// }
+
+// function getData(data) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("data of " + data);
+//        resolve("sucess");
+
+//     }, 1000);
+//   });
+// }
+
+// async function  getAllData( ) {
+//     await getData(1);
+//     await getData(2);
+//     await getData(3);
+//     await getData(4);
+
+// }
+
+// //IIFE this we do not need to call it willl automatically get called-----drawBackcannot reuse it
+
+// (async function  () {
+//   await api();
+//   await api();
+//   await api();
+//   await api();
+//   await api();
+// })();
+
+// (async function ( ) {
+//     await getData(1);
+//     await getData(2);
+//     await getData(3);
+//     await getData(4);
+
+// })();
+
+///fetch API
+const URL = "http://localhost/8080/api/image/search";
+
+let getImage = async () => {
+  console.log("getting image");
+  let response = await fetch(URL);
+  console.log(response);
+};
 
 
-
-
-
-function getData(data) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("data of " + data);
-       resolve("sucess");
-      
-    }, 1000);
-  });
-}
-
-async function  getAllData( ) {
-    await getData(1);
-    await getData(2);
-    await getData(3);
-    await getData(4);
-    
-}
-
- 
-//IIFE this we do not need to call it willl automatically get called-----drawBackcannot reuse it
-
-(async function  () {
-  await api();
-  await api();
-  await api();
-  await api();
-  await api();
-})();
-
-
-
-(async function ( ) {
-    await getData(1);
-    await getData(2);
-    await getData(3);
-    await getData(4);
-    
-})();
