@@ -1,4 +1,4 @@
-console.log("shweta");
+// console.log("shweta");
 
 let heading = document.querySelector("h1");
 
@@ -150,47 +150,77 @@ h.innerText = h.innerText + " from shweta student";
 //     })
 // })
 
-// let promise=new Promise((resolve , reject)=>{
-//     console.log("i am promiss");
-//     // resolve("order complete");
-//     reject("some error occured");
-// })
+// ///promiss
+// let promiss = new Promise((resolve, reject) => {
+//   console.log("i am promiss");
+//   // resolve("order complete");
+//   reject("some error occured");
+// });
 
-// function getData (data , getNextData) {
-//     return new Promise((resolve , reject)=>{
-//          setTimeout(()=>{
-//          console.log("data of " +  data);
-//         //  resolve("sucess");
-//          if(getNextData) {
-//             getNextData()
-//          }
-//          } , 1000);
-//     })
-
+// function getData(data, getNextData) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("data of " + data);
+//       //  resolve("sucess");
+//       if (getNextData) {
+//         getNextData();
+//       }
+//     }, 1000);
+//   });
 // }
 
-// getData(1 , ()=> {
-//     getData(2 , ()=>{
-//         getData(3 , ()=>{
-//             getData(4);
-//         })
-//     })
-// })
+// getData(1, () => {
+//   getData(2, () => {
+//     getData(3, () => {
+//       getData(4);
+//     });
+//   });
+// });
 
-let getPromiss = () => {
+// let getPromiss = () => {
+//   return new Promise((resolve, reject) => {
+//     console.log("i am promissing");
+//     resolve("sucess");
+//     // reject("error");
+//   });
+// };
+
+// let promise = getPromiss();
+
+// promise.then((result) => {
+//   console.log(result + " promisss full filed");
+// });
+
+// promise.catch((error) => {
+//   console.log(error + " promiss rejected");
+// });
+
+asyncFunc = () => {
   return new Promise((resolve, reject) => {
-    console.log("i am promissing");
-    resolve("sucess");
-    // reject("error");
+    setTimeout(() => {
+      console.log("data 1");
+      resolve("success");
+    }, 3000);
   });
 };
 
-let promise = getPromiss();
+asyncFunc2 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("data 2");
+      resolve("success");
+    }, 3000);
+  });
+};
 
-promise.then((result ) => {
-  console.log(result + " promisss full filed");
-});
+console.log("getting data 1.....");
+let p1 = asyncFunc();
+p1.then((result) => {
+  console.log(result);
 
-promise.catch((error) => {
-  console.log(error + " promiss rejected");
+  console.log("getting data 2...");
+  let p2 = asyncFunc2();
+  p2.then((result) => {
+    console.log(result);
+  });
 });
