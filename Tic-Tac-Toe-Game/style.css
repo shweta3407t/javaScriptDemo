@@ -71,13 +71,14 @@ body{
 }
 
 
+
+
 .message-container{
   height: 900px;
    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 
 }
 
@@ -88,6 +89,18 @@ body{
     display: none;
      
 }
+
+
+
+.drawHide{
+  height: 900px;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
 
 #message{
     font-size: 40px;

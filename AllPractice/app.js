@@ -51,49 +51,87 @@ let h=document.querySelector("h2");
 
 
 
-let student = {
-    fullname : "shweta",
-    roll : 23 ,
-    studey  (){
-        console.log(this.fullname + "studing");
-    }
-}
+// let student = {
+//     fullname : "shweta",
+//     roll : 23 ,
+//     studey  (){
+//         console.log(this.fullname + "studing");
+//     }
+// }
 
 
-let employee = {
-    calTax(){
-        console.log("tax is 10%");
-    }
-}
+// let employee = {
+//     calTax(){
+//         console.log("tax is 10%");
+//     }
+// }
 
-const shweta ={
-  salary : 3000 
+// const shweta ={
+//   salary : 3000 
 
-}
+// }
 
-shweta.__proto__ = employee ;
+// shweta.__proto__ = employee ;
 
 
-class car{
-    brand;
+// class car{
+//     brand = car;
 
-    constructor(brand){
-        this.brand=brand;
-    }
+//     constructor(brand){
+//        console.log("enter parant constructor");
+//         this.brand=brand;
+//     }
  
      
 
-    stop (){
-        console.log( this.brand + " car breaking");
+//     stop (){
+//         console.log( this.brand + " car breaking");
+//     }
+// }
+
+// class farari extends car{
+//     brand="shweta";
+//     constructor(){
+//         super();
+//         console.log("neter child constructor");
+//     }
+
+
+// }
+
+// let farariCar=new farari();
+
+class User {
+    constructor(name , imail){
+        this.name=name;
+        this.email=this.email;
     }
+
+     viewData=(   )=>{
+        console.log("user name : " + this.name + ", user email : " + this.email);
+    }
+
+
+
 }
 
-class farari extends car{
-    brand="shweta";
+let student1 = new User("shweta" , "shweta@gmail");
+
+class Admin extends User{
+    constructor(name , email){
+        super();
+        this.name=name;
+        this.email=email;
+    }
+
+    editData () {
+        console.log("can edit data");
+    }
 
 }
 
-let farariCar=new farari( );
+let teacher=new Admin("ankita" , "tikki@gmail.com");
+
 
 
 
