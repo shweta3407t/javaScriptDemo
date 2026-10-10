@@ -3,15 +3,12 @@ let boxes = document.querySelectorAll(".box");
 let reset = document.querySelector("#reset");
 
 let startAgain = document.querySelector("#startAgain");
-let draw = document.querySelector("#draw");
-
+ 
 let messageContainer = document.querySelector(".message-container");
 
-let drawMessageContainer = document.querySelector(".drawHide");
-
+ 
 let winnerMessage = document.querySelector("#winnerMessage");
-let drawMessage = document.querySelector("#drawMessage");
-
+ 
 let winPattern = [
   [0, 1, 2],
   [3, 4, 5],
@@ -23,7 +20,7 @@ let winPattern = [
   [2, 4, 6],
 ];
 
-let turnO = true;
+let turnO=true;
 
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
@@ -37,52 +34,52 @@ boxes.forEach((box) => {
       turnO = true;
     }
 
-    box.dispatchEvent;
+    // box.dispatchEvent;
 
     checkWinner();
+    checkDraw();
   });
 });
-displayDraw();
 
- const checkWinner = () => {
-  for (let pattern of winPattern) {
+ 
+
+const checkWinner = () => {
+   for (let pattern of winPattern) {
     let position1 = boxes[pattern[0]].innerText;
     let position2 = boxes[pattern[1]].innerText;
     let position3 = boxes[pattern[2]].innerText;
 
     if (position1 != "" && position2 != "" && position3 != "") {
       if (position1 == position2 && position2 == position3) {
-        displayWinner(position1);
-
-         iswinner = true;
          
+        displayWinner(position1);
+        
       }
-
     }
+   }
 
-     
-  }
-  if (!iswinner) {
-      displayDraw();
-    }
- 
-};
+ };
 
- 
-
-let iswinner = false;
 const displayWinner = (win) => {
+  console.log("displayWinner")
   winnerMessage.innerText = ` ---Congratulation , Winner is ${win}---`;
-  winnerMessage.classList.remove("hide");
+  messageContainer.classList.remove("hide");
   disableButton();
-  
-    
 };
 
-const displayDraw = () => {
-  drawMessage.innerText = "--- Game Draw (No winner)---";
-  drawMessage.classList.remove("hide");
+
+const checkDraw = () => {
+  let isDraw = [...boxes].every((box) => {
+    return box.innerText !== "";
+  });
+
+  if (isDraw) {
+    winnerMessage.innerText = "It's a Draw!";
+    messageContainer.classList.remove("hide");
+    disableButton();
+  }
 };
+ 
 
 const disableButton = () => {
   for (let box of boxes) {
@@ -103,12 +100,6 @@ const resetgame = () => {
   messageContainer.classList.add("hide");
 };
 
-const drawResetgame = () => {
-  turnO = true;
-  enableButton();
-  drawMessageContainer.classList.add("hide");
-};
-
-startAgain.addEventListener("click", resetgame());
-reset.addEventListener("click", resetgame());
-draw.addEventListener("click", drawResetgame());
+ 
+startAgain.addEventListener("click", resetgame);
+reset.addEventListener("click", resetgame);
