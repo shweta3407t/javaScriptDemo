@@ -280,12 +280,27 @@ h.innerText = h.innerText + " from shweta student";
 // })();
 
 ///fetch API
-const URL = "http://localhost/8080/api/image/search";
+const URL = "https://jsonplaceholder.typicode.com/posts/1";
+const factPara=document.querySelector("#para");
+const btn=document.querySelector(".btn");
 
-let getImage = async () => {
-  console.log("getting image");
+let getImage = async () => {///asyncf
+  console.log("getting image");//await
+
   let response = await fetch(URL);
   console.log(response);
+
+  let data= await response.json();  //jason()
+  console.log(data);
+
+  factPara.innerText=  data[2].text;
 };
+
+
+btn.addEventListener("click" , getImage);
+
+
+
+
 
 
