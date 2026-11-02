@@ -1,9 +1,9 @@
 // console.log("shweta");
 
-let heading = document.querySelector("h1");
+// let heading = document.querySelector("h1");
 
-let h = document.querySelector("h2");
-h.innerText = h.innerText + " from shweta student";
+// let h = document.querySelector("h2");
+// h.innerText = h.innerText + " from shweta student";
 
 //  let divs=document.querySelectorAll(".box");
 
@@ -279,27 +279,49 @@ h.innerText = h.innerText + " from shweta student";
 
 // })();
 
-///fetch API
-const URL = "https://jsonplaceholder.typicode.com/posts/1";
-const factPara=document.querySelector("#para");
-const btn=document.querySelector(".btn");
+// ///fetch API
+// const URL = "https://jsonplaceholder.typicode.com/posts/1";
+// const factPara=document.querySelector("#para");
+// const btn=document.querySelector(".btn");
 
-let getImage = async () => {///asyncf
-  console.log("getting image");//await
+// let getImage = async () => {///asyncf
+//   console.log("getting image");//await
 
-  let response = await fetch(URL);
-  console.log(response);
+//   let response = await fetch(URL);
+//   console.log(response);
 
-  let data= await response.json();  //jason()
-  console.log(data);
+//   let data= await response.json();  //jason()
+//   console.log(data);
 
-  factPara.innerText=  data[2].text;
-};
-
-
-btn.addEventListener("click" , getImage);
+//   factPara.innerText=  data[2].text;
+// };
 
 
+// btn.addEventListener("click" , getImage);
+
+
+
+let div = document.querySelector("div");
+div.addEventListener("mouseover" , () => {
+
+  div.style.backgroundColor = "red" ;
+});
+
+div.addEventListener("mouseout" , () => {
+
+  div.style.backgroundColor = "pink" ;
+});
+
+
+//move button 
+let btn = document.querySelector("button");
+window.addEventListener("mousemove" , (value)=> {
+
+ 
+  btn.style.top = value.clientY + "px" ;
+  btn.style.left = value.clientX + "px" ; 
+
+})
 
 
 
